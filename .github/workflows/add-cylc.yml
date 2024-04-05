@@ -15,10 +15,12 @@ jobs:
 
       - name: Add Cylc
         run: |
+          set +x
           sudo gem install bundler
-          script/add-grammar https://github.com/cylc/cylc-textmate-grammar/
+          script/add-grammar https://github.com/cylc/Cylc.tmbundle/
           script/update-ids
           git add -u
           git commit -m '..'
+          git status
           git diff
           git push
