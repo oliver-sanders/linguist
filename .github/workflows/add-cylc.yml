@@ -1,0 +1,23 @@
+name: Add Cylc
+
+on:
+  workflow_dispatch:
+
+jobs:
+  add-cylc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+
+      - name: Configure git
+        uses: cylc/release-actions/configure-git@v1
+
+      - name: Add Cylc
+        run: |
+          script/add-grammar https://github.com/cylc/cylc-textmate-grammar/
+          script/update-ids
+          git add -u
+          git commit -m '..'
+          git diff
+          git push
