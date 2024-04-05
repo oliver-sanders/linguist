@@ -15,7 +15,7 @@ jobs:
 
       - name: Add Cylc
         run: |
-          gem install bundler
+          sudo gem install bundler
           script/add-grammar https://github.com/cylc/cylc-textmate-grammar/
           script/update-ids
           git add -u
