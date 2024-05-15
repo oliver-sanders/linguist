@@ -7,15 +7,17 @@ jobs:
   add-cylc:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v1
-
       - name: Configure git
         uses: cylc/release-actions/configure-git@v1
+
+      - name: checkout
+        uses: actions/checkout@v1
 
       - name: Add Cylc
         run: |
           set -x
+          git remote -v
+
           sudo gem install bundler
           sudo gem build github-linguist.gemspec
           sudo gem install *.gem
@@ -26,5 +28,5 @@ jobs:
           git add vendor/licenses/git_submodule/Cylc.tmbundle.dep.yml
           git commit -m '..'
           git status
-          git checkout -b add-cylc-2
-          git push
+          # git checkout -b add-cylc-2
+          git push origin HEAD:master  # add-cylc-2
