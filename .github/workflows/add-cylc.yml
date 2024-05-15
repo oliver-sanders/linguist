@@ -11,7 +11,7 @@ jobs:
         uses: cylc/release-actions/configure-git@v1
 
       - name: checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v4
 
       - name: Add Cylc
         run: |
