@@ -34,5 +34,4 @@ jobs:
 
       - name: Pushhhhh
         run: |
-          # git checkout -b add-cylc-2
-          git push origin HEAD:master  # add-cylc-2
+          git push origin HEAD:master || git push
