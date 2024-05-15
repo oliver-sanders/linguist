@@ -19,6 +19,7 @@ jobs:
           sudo gem install bundler
           sudo gem build github-linguist.gemspec
           sudo gem install *.gem
+          script/bootstrap
           script/add-grammar https://github.com/cylc/Cylc.tmbundle/
           script/update-ids
           git add -u
