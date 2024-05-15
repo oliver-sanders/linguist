@@ -28,5 +28,11 @@ jobs:
           git add vendor/licenses/git_submodule/Cylc.tmbundle.dep.yml
           git commit -m '..'
           git status
+
+      - name: Configure git
+        uses: cylc/release-actions/configure-git@v1
+
+      - name: Pushhhhh
+        run: |
           # git checkout -b add-cylc-2
           git push origin HEAD:master  # add-cylc-2
