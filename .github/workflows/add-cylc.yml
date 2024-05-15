@@ -15,15 +15,12 @@ jobs:
 
       - name: Add Cylc
         run: |
-          set +x
+          set -x
           sudo gem install bundler
           sudo gem build github-linguist.gemspec
           sudo gem install *.gem
-          # sudo gem install github-linguist cgi charlock_holmes mini_mime rugged minitest rake-compiler mocha plist pry rake yajl-ruby licensed licensee
-
-
           script/add-grammar https://github.com/cylc/Cylc.tmbundle/
-          bundle exec script/update-ids
+          script/update-ids
           git add -u
           git commit -m '..'
           git status
