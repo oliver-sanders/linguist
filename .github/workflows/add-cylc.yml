@@ -25,5 +25,5 @@ jobs:
           git add -u
           git commit -m '..'
           git status
-          git diff
-          git push origin HEAD:master
+          git checkout -b add-cylc-2
+          git push
