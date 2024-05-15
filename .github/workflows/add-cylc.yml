@@ -21,7 +21,7 @@ jobs:
 
 
           script/add-grammar https://github.com/cylc/Cylc.tmbundle/
-          script/update-ids
+          bundle exec script/update-ids
           git add -u
           git commit -m '..'
           git status
