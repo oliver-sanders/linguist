@@ -17,8 +17,8 @@ jobs:
         run: |
           set +x
           sudo gem install bundler
-          gem build github-linguist.gemspec
-          gem install *.gem
+          sudo gem build github-linguist.gemspec
+          sudo gem install *.gem
           # sudo gem install github-linguist cgi charlock_holmes mini_mime rugged minitest rake-compiler mocha plist pry rake yajl-ruby licensed licensee
 
 
