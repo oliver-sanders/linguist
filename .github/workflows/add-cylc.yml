@@ -17,7 +17,9 @@ jobs:
         run: |
           set +x
           sudo gem install bundler
-          sudo gem install github-linguist cgi charlock_holmes mini_mime rugged minitest rake-compiler mocha plist pry rake yajl-ruby licensed licensee
+          gem build github-linguist.gemspec
+          gem install *.gem
+          # sudo gem install github-linguist cgi charlock_holmes mini_mime rugged minitest rake-compiler mocha plist pry rake yajl-ruby licensed licensee
 
 
           script/add-grammar https://github.com/cylc/Cylc.tmbundle/
