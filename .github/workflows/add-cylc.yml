@@ -26,4 +26,4 @@ jobs:
           git commit -m '..'
           git status
           git diff
-          git push
+          git push origin HEAD:master
